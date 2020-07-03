@@ -2,6 +2,7 @@ package com.insightfullogic.java8.demo;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Demo {
     public static void main(String[] args) {
@@ -10,6 +11,16 @@ public class Demo {
         findCharCount(str);
         //计算给定字符串在 目标字符串中的次数
         findCount(str, "ab");
+
+
+        int count = Stream.of(1, 2, 3)
+                .reduce(0, (acc, element) -> acc + element);
+        System.out.println(count);
+
+
+        String s = "aASFSDAGFFDG";
+        long count1 = s.chars().filter(Character::isLowerCase).count();
+        System.out.println(count1);
     }
 
     //计算给定字符串中每个字符出现的次数
