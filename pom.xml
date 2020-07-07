@@ -3,8 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.insightfullogic</groupId>
     <artifactId>lambdas-book-examples</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>spring</module>
+    </modules>
     <name>lambdas-book-examples</name>
     <url>http://maven.apache.org</url>
 
