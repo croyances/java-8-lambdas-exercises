@@ -1,9 +1,23 @@
 package springdemo1;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+
+
 public class UserImpl implements User {
+
+    @Resource
+    private  UserDAO userDAO;
 
     @Override
     public void save() {
-        System.out.println("12132");
+
+        UserProxy userProxy = new UserProxy(userDAO);
+        userProxy.createProxy().say();
+
+        System.out.println("User  save 方法执行了");
     }
 }
