@@ -1,6 +1,7 @@
 package com.example.demo.web;
 
 
+import com.example.demo.handlerInterceptordemo.UnHandler;
 import com.example.demo.listenerdemo.MyHttpSessionListen;
 import com.example.demo.listenerdemo.User;
 import com.example.demo.listenerdemo.UserService;
@@ -24,6 +25,7 @@ public class ListenController {
     @Resource
     private ApplicationContext applicationContext;
 
+    @UnHandler
     @GetMapping("/user")
     public User getUser(HttpServletRequest request) {
         ServletContext application = request.getServletContext();
