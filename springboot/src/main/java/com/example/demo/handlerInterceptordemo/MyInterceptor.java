@@ -16,7 +16,7 @@ public class MyInterceptor  implements HandlerInterceptor {
         Method method = handlerMethod.getMethod();
         UnHandler annotation = method.getAnnotation(UnHandler.class);
         if (annotation!=null){
-            return false;
+            return true;
         }
 
 
