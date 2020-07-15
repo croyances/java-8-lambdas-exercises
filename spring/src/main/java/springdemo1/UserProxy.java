@@ -21,10 +21,11 @@ public class UserProxy {
         UserDAO u =(UserDAO) Proxy.newProxyInstance(userDAO.getClass().getClassLoader(), userDAO.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                if ("say".equals(method.getName())) {
-                    System.out.println("增强say方法");
-                    return method.invoke(userDAO);
-                }
+//                if ("say".equals(method.getName())) {
+//                    System.out.println("增强say方法");
+//                    return method.invoke(userDAO);
+//                }
+                System.out.println("增强"+method+"方法");
                 return method.invoke(userDAO);
             }
 

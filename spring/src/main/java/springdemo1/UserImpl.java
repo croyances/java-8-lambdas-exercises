@@ -20,4 +20,12 @@ public class UserImpl implements User {
 
         System.out.println("User  save 方法执行了");
     }
+
+    @Override
+    public void tell() {
+        UserProxy userProxy = new UserProxy(userDAO);
+        userProxy.createProxy().tell();
+
+
+    }
 }

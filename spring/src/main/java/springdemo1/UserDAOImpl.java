@@ -14,4 +14,9 @@ public class UserDAOImpl implements  UserDAO {
     public void say() {
         System.out.println("UserDAO  Say 方法执行了");
     }
+
+    @Override
+    public void tell() {
+        System.out.println("UserDAO  tell 方法执行了");
+    }
 }

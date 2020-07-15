@@ -10,6 +10,7 @@ public class Test {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("app.xml");
         User user = (User) applicationContext.getBean("User");
         user.save();
+        user.tell();
     }
 
 

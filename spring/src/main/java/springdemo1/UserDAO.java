@@ -8,4 +8,6 @@ package springdemo1;
 public interface UserDAO {
 
     void say();
+
+    void tell();
 }
