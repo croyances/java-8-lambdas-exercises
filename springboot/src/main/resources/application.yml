@@ -1,11 +1,17 @@
 spring:
   activemq:
-# activemq url
+    # activemq url
     broker-url: tcp://localhost:61616
     in-memory: true
     pool:
-# 如果此处设置为true，需要添加activemq-pool的依赖包，否则会自动配置
+      # 濡傛灉姝ゅ璁剧疆涓簍rue锛岄渶瑕佹坊鍔燼ctivemq-pool鐨勪緷璧栧寘锛屽惁鍒欎細鑷姩閰嶇疆
       enabled: false
 
   jms:
     pub-sub-domain: true
+
+
+  redis:
+    host: 120.78.93.113
+    port: 6365
+    password: CCCgiggle123...
