@@ -17,7 +17,9 @@ public class RedisListen implements MessageListener {
     // 接收订阅的消息
     @Override
     public void onMessage(Message message, byte[] bytes) {
-        System.out.println("消息来了"+"121321321");
+        byte[] channel = message.getChannel();
+        System.out.println(channel);
+        System.out.println("消息来了"+"121321321"+message);
     }
 
 }

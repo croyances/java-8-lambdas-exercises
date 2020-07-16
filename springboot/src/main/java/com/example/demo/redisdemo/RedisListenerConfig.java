@@ -14,12 +14,14 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 public class RedisListenerConfig {
 
     @Bean
-    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,RedisListen messageListener) {
+    RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
+                                            RedisListen messageListener,InitRedisListen messageListener2) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
 
         //可以添加多个 messageListener
-        container.addMessageListener(messageListener, new PatternTopic("test"));
+    //    container.addMessageListener(messageListener, new PatternTopic("test"));
+        container.addMessageListener(messageListener2, new PatternTopic("loadCache"));
 
         return container;
     }
