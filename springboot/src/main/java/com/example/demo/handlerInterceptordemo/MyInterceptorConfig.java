@@ -16,7 +16,9 @@ public class MyInterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(new MyInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/d.html")
-                .excludePathPatterns("/cache");
+            //  .excludePathPatterns("/*.html")
+           //    .excludePathPatterns("/cache");
+        ;
 
     }
 

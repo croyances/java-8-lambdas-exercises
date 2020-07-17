@@ -17,9 +17,13 @@ public class MyCache {
 
     @org.springframework.context.event.EventListener
     private void  test (String  s){
+
+        if (s.equals("1")){
         System.out.println("加载缓存");
         map.put("ss",new ArrayList<>(Arrays.asList("12","ASD","SADAS")));
-
+        }else{
+            System.out.println(102);
+        }
     }
 
 

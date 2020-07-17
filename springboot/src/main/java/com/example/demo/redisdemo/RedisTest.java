@@ -16,8 +16,8 @@ public class RedisTest {
     @Autowired
     private  StringRedisTemplate redisTemplate ;
 
-    @Scheduled(fixedRate = 1000)
-    public void sendMessage() {
-        redisTemplate.convertAndSend("test", String.valueOf(Math.random()));
-    }
+//    @Scheduled(fixedRate = 1000)
+//    public void sendMessage() {
+//        redisTemplate.convertAndSend("test", String.valueOf(Math.random()));
+//    }
 }

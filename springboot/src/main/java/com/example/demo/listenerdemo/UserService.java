@@ -4,8 +4,6 @@ package com.example.demo.listenerdemo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-
 @Service
 public class UserService {
 
