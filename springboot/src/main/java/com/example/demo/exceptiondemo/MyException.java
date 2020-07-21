@@ -1,5 +1,7 @@
 package com.example.demo.exceptiondemo;
 
+import java.util.Optional;
+
 public class MyException extends RuntimeException {
 
     private String msg ;
