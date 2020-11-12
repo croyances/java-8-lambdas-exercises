@@ -143,6 +143,15 @@ public class MyTest {
         String[] strings = {"2", "3", "5", "7","11", "13"};
 
 
+        IntStream.generate(() ->
+        {
+            return 0;
+        }).mapToObj((s) -> {
+            return s;
+        }).forEach(System.out::println);
+
+
+
 
     }
 }

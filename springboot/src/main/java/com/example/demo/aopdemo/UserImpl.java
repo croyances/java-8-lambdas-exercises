@@ -7,9 +7,23 @@ package com.example.demo.aopdemo;
  */
 public class UserImpl implements User {
 
+    private String name;
+
+    public UserImpl(String s) {
+        this.name = s;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public void save() {
-        System.out.println("save   ...");
+        System.out.println("save   ..."+name);
     }
 
     @Override
