@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: 536
   activemq:
     # activemq url
     broker-url: tcp://localhost:61616
