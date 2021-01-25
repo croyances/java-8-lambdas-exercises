@@ -17,7 +17,9 @@ public class Test {
             @Override
             public void run() {
                 d.getGoneWork("2020-07-31 24:00:00");
-            };
+            }
+
+            ;
         }.start();
     }
 
@@ -52,8 +54,8 @@ class Demo {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                long h = ((endMillis-nowMillis)/1000/3600);
-                System.out.println("距离下班还有:" +(h)+"时"+((endMillis - h*3600*1000-nowMillis) / 1000) / 60 + "分: "
+                long h = ((endMillis - nowMillis) / 1000 / 3600);
+                System.out.println("距离下班还有:" + (h) + "时" + ((endMillis - h * 3600 * 1000 - nowMillis) / 1000) / 60 + "分: "
                         + ((endMillis - nowMillis) / 1000) % 60 + "秒");
             } else {
                 System.out.println("下班了! ! ! ");

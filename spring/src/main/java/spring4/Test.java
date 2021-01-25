@@ -17,7 +17,8 @@ public class Test {
 //        Say beanFactorys=applicationContext.getBean(Say.class);
 //        beanFactorys.say();
 
-        Test t = new Test();;
+        Test t = new Test();
+        ;
         say.say();
     }
 }

@@ -46,7 +46,7 @@ code.google.com/p/crypto-js/wiki/License
          */
         parse: function (input) {
             var ciphertext = Hex.parse(input);
-            return CipherParams.create({ ciphertext: ciphertext });
+            return CipherParams.create({ciphertext: ciphertext});
         }
     };
 }());

@@ -17,7 +17,7 @@ public class RedisListenerConfigCopy {
 
     @Bean
     RedisMessageListenerContainer container2(RedisConnectionFactory connectionFactory,
-                                            MessageListener listenerAdapter,MessageListener listenerAdapter2) {
+                                             MessageListener listenerAdapter, MessageListener listenerAdapter2) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
 
@@ -40,9 +40,6 @@ public class RedisListenerConfigCopy {
         System.out.println("消息适配器进来了");
         return new MessageListenerAdapter(redisReceiver, "receiveMessage2");
     }
-
-
-
 
 
 }

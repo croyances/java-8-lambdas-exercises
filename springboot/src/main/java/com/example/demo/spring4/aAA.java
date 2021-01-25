@@ -15,7 +15,6 @@ public class aAA {
     private Say say;
 
 
-
     public Say getSay() {
         return say;
     }

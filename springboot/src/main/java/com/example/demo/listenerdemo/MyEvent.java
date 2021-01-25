@@ -1,10 +1,8 @@
 package com.example.demo.listenerdemo;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 
 public class MyEvent extends ApplicationEvent {
-
 
 
     private User user;

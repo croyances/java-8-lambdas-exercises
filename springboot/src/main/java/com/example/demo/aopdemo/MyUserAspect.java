@@ -14,13 +14,13 @@ import org.aspectj.lang.annotation.Pointcut;
 public class MyUserAspect {
 
 
-    @Before(value = "MyUserAspect.pointCut()" )
-    private void checkPri(){
+    @Before(value = "MyUserAspect.pointCut()")
+    private void checkPri() {
         System.out.println("权限校验");
     }
 
-    @Pointcut("execution(* com.example.demo.aopdemo.UserImpl.save(..))" )
-    private void pointCut(){
+    @Pointcut("execution(* com.example.demo.aopdemo.UserImpl.save(..))")
+    private void pointCut() {
 
     }
 }

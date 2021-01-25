@@ -6,20 +6,19 @@
     <bean id="User" class="com.example.demo.aopdemo.UserImpl">
         <constructor-arg value="AS233"></constructor-arg>
     </bean>
-    
 
-    <bean id="MyUserAspect"  class="com.example.demo.aopdemo.MyUserAspect"></bean>
+
+    <bean id="MyUserAspect" class="com.example.demo.aopdemo.MyUserAspect"></bean>
 
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-<!--    <aop:config>-->
-<!--        <aop:pointcut id="save1" expression="execution(* com.example.demo.aopdemo.UserImpl.save(..))"/>-->
+    <!--    <aop:config>-->
+    <!--        <aop:pointcut id="save1" expression="execution(* com.example.demo.aopdemo.UserImpl.save(..))"/>-->
 
 
+    <!--        <aop:aspect ref="MyUserAspect">-->
+    <!--            <aop:before method="checkPri"   pointcut-ref="save1"></aop:before>-->
 
-<!--        <aop:aspect ref="MyUserAspect">-->
-<!--            <aop:before method="checkPri"   pointcut-ref="save1"></aop:before>-->
-
-<!--        </aop:aspect>-->
-<!--    </aop:config>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
 
 </beans>

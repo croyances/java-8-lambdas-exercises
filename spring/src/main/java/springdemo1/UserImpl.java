@@ -1,16 +1,13 @@
 package springdemo1;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import javax.annotation.Resource;
 
 
 public class UserImpl implements User {
 
     @Resource
-    private  UserDAO userDAO;
+    private UserDAO userDAO;
 
     @Override
     public void save() {

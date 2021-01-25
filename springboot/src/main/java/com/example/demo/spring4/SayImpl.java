@@ -27,11 +27,10 @@ public class SayImpl implements Say {
 //    }
 
 
-
     @Override
     public void say() {
         System.out.println(1);
-       // user.setName("45");
+        // user.setName("45");
         System.out.println(user.getName());
 
     }

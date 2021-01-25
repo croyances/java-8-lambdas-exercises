@@ -2,7 +2,6 @@ package springmvcdemo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author: croyances
@@ -14,11 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping("/hello")
-    public  String say(){
+    public String say() {
         System.out.println("Hello");
         return "success";
     }
-
 
 
 }

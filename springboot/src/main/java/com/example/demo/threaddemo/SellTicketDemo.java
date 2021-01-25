@@ -1,6 +1,7 @@
 package com.example.demo.threaddemo;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class SellTicketDemo {
 
@@ -18,8 +19,8 @@ public class SellTicketDemo {
         Thread t6 = new Thread(st, "窗口6");
 
         ExecutorService executorService = Executors.newFixedThreadPool(3);
-         executorService.execute(st);
-         executorService.execute(st);
+        executorService.execute(st);
+        executorService.execute(st);
 
         // 启动线程
 //        t1.start();

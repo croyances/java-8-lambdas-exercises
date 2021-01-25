@@ -7,13 +7,10 @@ package com.insightfullogic.java8.mycroyances;
  */
 
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import java.awt.*; //导入 AWT 包
-import java.awt.event.ActionEvent;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.function.BinaryOperator;
-import javax.swing.*; //导入 swing 包
 
 class MyJDialog extends JDialog { //创建新类继承 JDialog 类
     public MyJDialog(MyFrame frame) {
@@ -51,10 +48,10 @@ public class MyFrame extends JFrame { //创建新类
 //
 //        });
 
-     ActionListener oneArgument = event -> System.out.println("button clicked");
-     jButton.addActionListener(oneArgument);
-     jButton.addActionListener(e -> System.out.println(21212));
-     A();
+        ActionListener oneArgument = event -> System.out.println("button clicked");
+        jButton.addActionListener(oneArgument);
+        jButton.addActionListener(e -> System.out.println(21212));
+        A();
         container.add(jButton); //将按钮添加到容器中
         container.setBackground(Color.white);
         setSize(200, 200);
@@ -63,28 +60,26 @@ public class MyFrame extends JFrame { //创建新类
     }
 
 
+    private void A() {
+        Runnable noArguments = () -> System.out.println("Hello World");
+        noArguments.run();
+
+        Runnable noArguments1 = new Runnable() {
+            @Override
+            public void run() {
+                System.err.print("boolean");
+            }
+        };
 
 
- private void  A(){
-  Runnable noArguments = () -> System.out.println("Hello World");
-  noArguments.run();
+        Runnable multiStatement = () -> {
 
-  Runnable noArguments1 =  new Runnable() {
-   @Override
-   public void run() {
-    System.err.print("boolean");
-   }
-  };
-
-
-  Runnable multiStatement = () -> {
-
-   System.out.print("Hello");
-   System.out.println(" World");
-  };
-  BinaryOperator<Long> add = (x, y) -> x + y;
-  BinaryOperator<Long> addExplicit = (Long x, Long y) -> x + y;
- }
+            System.out.print("Hello");
+            System.out.println(" World");
+        };
+        BinaryOperator<Long> add = (x, y) -> x + y;
+        BinaryOperator<Long> addExplicit = (Long x, Long y) -> x + y;
+    }
 
 
 }

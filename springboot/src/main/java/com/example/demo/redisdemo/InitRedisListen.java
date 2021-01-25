@@ -12,7 +12,7 @@ public class InitRedisListen implements MessageListener {
 
 
     @Autowired
-    private ApplicationContext applicationContext ;
+    private ApplicationContext applicationContext;
 
     @Override
     public void onMessage(Message message, byte[] bytes) {

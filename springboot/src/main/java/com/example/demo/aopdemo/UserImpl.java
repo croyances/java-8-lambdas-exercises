@@ -23,7 +23,7 @@ public class UserImpl implements User {
 
     @Override
     public void save() {
-        System.out.println("save   ..."+name);
+        System.out.println("save   ..." + name);
     }
 
     @Override

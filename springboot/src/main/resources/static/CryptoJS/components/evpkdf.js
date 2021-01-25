@@ -26,7 +26,7 @@ code.google.com/p/crypto-js/wiki/License
          * @property {number} iterations The number of iterations to perform. Default: 1
          */
         cfg: Base.extend({
-            keySize: 128/32,
+            keySize: 128 / 32,
             hasher: MD5,
             iterations: 1
         }),

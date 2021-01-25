@@ -7,8 +7,6 @@ import java.util.concurrent.Executors;
 public class MyCall implements Callable<String> {
 
 
-
-
     @Override
     public String call() throws Exception {
         return "1";

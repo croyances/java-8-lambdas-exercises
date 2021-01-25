@@ -2,8 +2,6 @@ package com.example.demo.handlerInterceptordemo;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
@@ -16,8 +14,8 @@ public class MyInterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(new MyInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/d.html")
-            //  .excludePathPatterns("/*.html")
-           //    .excludePathPatterns("/cache");
+        //  .excludePathPatterns("/*.html")
+        //    .excludePathPatterns("/cache");
         ;
 
     }

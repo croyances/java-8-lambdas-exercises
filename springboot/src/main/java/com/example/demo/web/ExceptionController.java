@@ -26,7 +26,7 @@ public class ExceptionController {
     }
 
     @GetMapping("/business")
-    public JsonResult testException(String a ) {
+    public JsonResult testException(String a) {
         try {
             int i = 1 / 0;
         } catch (Exception e) {
@@ -35,8 +35,6 @@ public class ExceptionController {
         }
         return new JsonResult();
     }
-
-
 
 
 }

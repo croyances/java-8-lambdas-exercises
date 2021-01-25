@@ -14,8 +14,6 @@ import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
 
 @RestController
 @RequestMapping("/listenner")
@@ -33,12 +31,12 @@ public class ListenController {
     }
 
     @GetMapping("/count")
-    public String count(HttpSession  session ) {
-       //
+    public String count(HttpSession session) {
+        //
 //        ServletContext application = request.getServletContext();
 //
 //        int count = (int)application.getAttribute("count");
-        return "人数"+MyHttpSessionListen.count;
+        return "人数" + MyHttpSessionListen.count;
     }
 
     @GetMapping("/user2")
@@ -49,7 +47,6 @@ public class ListenController {
         return user.getUser2(applicationContext);
 
     }
-
 
 
 }

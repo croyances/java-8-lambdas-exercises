@@ -4,7 +4,6 @@ package com.example.demo.threaddemo;
 import com.example.demo.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.support.CronTrigger;
@@ -57,7 +56,6 @@ public class DynamicTask {
             System.out.println("test" + name);
         }
     }
-
 
 
 }

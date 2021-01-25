@@ -48,7 +48,7 @@ code.google.com/p/crypto-js/wiki/License
             M[offset] ^= generateKeystreamWord.call(this);
         },
 
-        keySize: 256/32,
+        keySize: 256 / 32,
 
         ivSize: 0
     });

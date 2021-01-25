@@ -1,6 +1,6 @@
 package com.example.demo.threaddemo;
 
-public class SellTicket  implements Runnable{
+public class SellTicket implements Runnable {
 
 
     // 定义100张票
@@ -38,12 +38,12 @@ public class SellTicket  implements Runnable{
     // }
 
     @Override
-    public  void run() {
+    public void run() {
         while (true) {
             // ta1,t2,t3三个线程
             // 这一次的tickets = 1;
-            if  (tickets > 0) {
-              //   为了模拟真实场景,我们稍作休息
+            if (tickets > 0) {
+                //   为了模拟真实场景,我们稍作休息
                 try {
                     Thread.sleep(0);
                     // t1进来并休息,t2进来并休息,t3进来并休息
@@ -52,8 +52,8 @@ public class SellTicket  implements Runnable{
                     e.printStackTrace();
                 }
 
-                    System.out.println(Thread.currentThread().getName() + "正在出售第"
-                            + (tickets--) + "张票");
+                System.out.println(Thread.currentThread().getName() + "正在出售第"
+                        + (tickets--) + "张票");
 
                 // 窗口1正在出售第1张票,tickets=0;
                 // 窗口2正在出售第0张票,tickets=-1;

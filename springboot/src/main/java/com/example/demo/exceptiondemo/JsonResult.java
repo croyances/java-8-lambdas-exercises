@@ -1,15 +1,11 @@
 package com.example.demo.exceptiondemo;
 
 
-
-
-
 public class JsonResult<T> {
 
     private T data;
     private String code;
     private String msg;
-
 
 
     public JsonResult() {
@@ -29,7 +25,6 @@ public class JsonResult<T> {
         this.code = "0";
         this.msg = "操作成功！";
     }
-
 
 
     public JsonResult(T data, String msg) {

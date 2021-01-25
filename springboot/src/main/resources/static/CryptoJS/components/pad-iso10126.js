@@ -16,8 +16,7 @@ CryptoJS.pad.Iso10126 = {
         var nPaddingBytes = blockSizeBytes - data.sigBytes % blockSizeBytes;
 
         // Pad
-        data.concat(CryptoJS.lib.WordArray.random(nPaddingBytes - 1)).
-             concat(CryptoJS.lib.WordArray.create([nPaddingBytes << 24], 1));
+        data.concat(CryptoJS.lib.WordArray.random(nPaddingBytes - 1)).concat(CryptoJS.lib.WordArray.create([nPaddingBytes << 24], 1));
     },
 
     unpad: function (data) {

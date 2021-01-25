@@ -12,7 +12,7 @@ import static java.util.stream.Collectors.groupingBy;
 
 public class Fibonacci {
 
-    private final Map<Integer,Long> cache;
+    private final Map<Integer, Long> cache;
 
     public Fibonacci() {
         cache = new HashMap<>();

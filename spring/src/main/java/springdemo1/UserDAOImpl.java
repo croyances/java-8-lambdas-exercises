@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @version: 1.0
  */
 @Component("UserDAO")
-public class UserDAOImpl implements  UserDAO {
+public class UserDAOImpl implements UserDAO {
 
     @Override
     public void say() {

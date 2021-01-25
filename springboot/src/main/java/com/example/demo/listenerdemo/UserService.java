@@ -8,13 +8,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
 
-
-    public  User getUser(){
-        return new User("蔡","武汉");
+    public User getUser() {
+        return new User("蔡", "武汉");
     }
 
 
-    public  User getUser2(ApplicationContext applicationContext){
+    public User getUser2(ApplicationContext applicationContext) {
 
         User user = new User("蔡", "武汉啊");
 

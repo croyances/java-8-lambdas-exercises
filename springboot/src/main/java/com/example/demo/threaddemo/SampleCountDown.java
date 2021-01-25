@@ -9,12 +9,14 @@ public class SampleCountDown {
      * 传入参数2，表示计数器计数为2
      */
     private final static CountDownLatch mCountDownLatch = new CountDownLatch(2);
+
     /**
      * 示例工作线程类
      */
     private static class WorkingThread extends Thread {
         private final String mThreadName;
         private final int mSleepTime;
+
         public WorkingThread(String name, int sleepTime) {
             mThreadName = name;
             mSleepTime = sleepTime;
@@ -28,7 +30,7 @@ public class SampleCountDown {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-         //   mCountDownLatch.countDown();
+            //   mCountDownLatch.countDown();
             System.out.println("[" + mThreadName + "] end!");
         }
     }
@@ -44,11 +46,11 @@ public class SampleCountDown {
             try {
                 // 会阻塞在这里等待 mCountDownLatch 里的count变为0；
                 // 也就是等待另外的WorkingThread调用countDown()
-          //      mCountDownLatch.await();
+                //      mCountDownLatch.await();
             } catch (Exception e) {
 
             }
-       //     System.out.println("[SampleThread] end!");
+            //     System.out.println("[SampleThread] end!");
         }
     }
 

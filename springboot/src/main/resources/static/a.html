@@ -1,149 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Testing websockets</title>
-<!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
- <script src="./CryptoJS"></script>
- <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/3.1.2/components/aes-min.js"></script>
- <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
- <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/3.1.2/components/tripledes-min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/Trip.js/1.1.0/trip.css"></script>
- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Testing websockets</title>
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
+    <script src="./CryptoJS"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/3.1.2/components/aes-min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/3.1.2/components/tripledes-min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Trip.js/1.1.0/trip.css"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
 
-<script type="text/javascript">
-var key = 'BOTWAVEE';
-//CBC模式加密  utf8 to base64
-function encryptByDESModeCBCUtf8to64(message,key,iv) {
-    //var message=CryptoJS.enc.Utf8.parse(message);
-var keyHex = CryptoJS.enc.Utf8.parse(key);
-        var ivHex = CryptoJS.enc.Utf8.parse(iv);
-        encrypted = CryptoJS.DES.encrypt(message, keyHex, {
-iv:ivHex,
-mode: CryptoJS.mode.CBC,
-padding:CryptoJS.pad.Pkcs7
+    <script type="text/javascript">
+        var key = 'BOTWAVEE';
+
+        //CBC模式加密  utf8 to base64
+        function encryptByDESModeCBCUtf8to64(message, key, iv) {
+            //var message=CryptoJS.enc.Utf8.parse(message);
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var ivHex = CryptoJS.enc.Utf8.parse(iv);
+            encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+                    iv: ivHex,
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
 // padding:CryptoJS.pad.Pkcs7
-}
-        );
-        //加密 成Base64
-return encrypted.ciphertext.toString(CryptoJS.enc.Base64);
-}
+                }
+            );
+            //加密 成Base64
+            return encrypted.ciphertext.toString(CryptoJS.enc.Base64);
+        }
 
-function encryptByDESModeCBCUtf8to(message,key,iv) {
-    var message=CryptoJS.enc.Utf8.parse(message);
-var keyHex = CryptoJS.enc.Utf8.parse(key);
-        var ivHex = CryptoJS.enc.Utf8.parse(iv);
-        encrypted = CryptoJS.DES.encrypt(message, keyHex, {
-iv:ivHex,
-mode: CryptoJS.mode.CBC,
-padding:CryptoJS.pad.Pkcs7
-}
-        );
-        //加密 成Base64
-return encrypted.ciphertext.toString();
+        function encryptByDESModeCBCUtf8to(message, key, iv) {
+            var message = CryptoJS.enc.Utf8.parse(message);
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var ivHex = CryptoJS.enc.Utf8.parse(iv);
+            encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+                    iv: ivHex,
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                }
+            );
+            //加密 成Base64
+            return encrypted.ciphertext.toString();
 // CryptoJS.enc.Base64
-}
+        }
 
-//CBC模式解密
-function decryptByDESModeCBC(ciphertext2,key,iv) {
-var keyHex = CryptoJS.enc.Utf8.parse(key);
-        var ivHex = CryptoJS.enc.Utf8.parse(iv);
-        // CryptoJS.enc.Base64.parse(
+        //CBC模式解密
+        function decryptByDESModeCBC(ciphertext2, key, iv) {
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var ivHex = CryptoJS.enc.Utf8.parse(iv);
+            // CryptoJS.enc.Base64.parse(
 // direct decrypt ciphertext
-var decrypted = CryptoJS.DES.decrypt({
- ciphertext: CryptoJS.enc.Base64.parse(ciphertext2)
-}, keyHex, {
-iv:ivHex,
-mode: CryptoJS.mode.CBC,
-padding: CryptoJS.pad.Pkcs7
-});
-return decrypted.toString(CryptoJS.enc.Utf8);
-}
+            var decrypted = CryptoJS.DES.decrypt({
+                ciphertext: CryptoJS.enc.Base64.parse(ciphertext2)
+            }, keyHex, {
+                iv: ivHex,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return decrypted.toString(CryptoJS.enc.Utf8);
+        }
 
-//CBC模式解密
-function decryptByDESModeCBCHex(ciphertext2,key,iv) {
-var keyHex = CryptoJS.enc.Utf8.parse(key);
-        var ivHex = CryptoJS.enc.Utf8.parse(iv);
+        //CBC模式解密
+        function decryptByDESModeCBCHex(ciphertext2, key, iv) {
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var ivHex = CryptoJS.enc.Utf8.parse(iv);
 // direct decrypt ciphertext
-var decrypted = CryptoJS.DES.decrypt({
-ciphertext: CryptoJS.enc.Hex.parse(ciphertext2)
-}, keyHex, {
-iv:ivHex,
-mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7
-});
+            var decrypted = CryptoJS.DES.decrypt({
+                ciphertext: CryptoJS.enc.Hex.parse(ciphertext2)
+            }, keyHex, {
+                iv: ivHex,
+                mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7
+            });
 
-return decrypted.toString(CryptoJS.enc.Utf8);
-}
+            return decrypted.toString(CryptoJS.enc.Utf8);
+        }
 
-//DES  ECB模式加密
-function encryptByDESModeEBC(message){
-var keyHex = CryptoJS.enc.Utf8.parse(key);
-var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
-mode: CryptoJS.mode.ECB,
-padding: CryptoJS.pad.Pkcs7
-});
-return encrypted.ciphertext.toString();
-}
+        //DES  ECB模式加密
+        function encryptByDESModeEBC(message) {
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return encrypted.ciphertext.toString();
+        }
 
-//DES  ECB模式解密
-function decryptByDESModeEBC(ciphertext){
-var keyHex = CryptoJS.enc.Utf8.parse(key);
-var decrypted = CryptoJS.DES.decrypt({
-ciphertext: CryptoJS.enc.Hex.parse(ciphertext)
-}, keyHex, {
-mode: CryptoJS.mode.ECB,
-padding: CryptoJS.pad.Pkcs7
-});
-var result_value = decrypted.toString(CryptoJS.enc.Utf8);
-return result_value;
-}
+        //DES  ECB模式解密
+        function decryptByDESModeEBC(ciphertext) {
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var decrypted = CryptoJS.DES.decrypt({
+                ciphertext: CryptoJS.enc.Hex.parse(ciphertext)
+            }, keyHex, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            var result_value = decrypted.toString(CryptoJS.enc.Utf8);
+            return result_value;
+        }
 
-function test0(){
-var source = $("#source").val();
+        function test0() {
+            var source = $("#source").val();
 // CryptoJS.enc.Utf8.parse(
-var cc = encryptByDESModeCBCUtf8to(source,"rrettre","234234234");
-$("#target").val(cc);
-}
+            var cc = encryptByDESModeCBCUtf8to(source, "rrettre", "234234234");
+            $("#target").val(cc);
+        }
 
-function test(){
-var source = $("#source").val();
+        function test() {
+            var source = $("#source").val();
 // CryptoJS.enc.Utf8.parse(
-var cc = encryptByDESModeCBCUtf8to64(source,"rrettre","234234234");
-$("#target").val(cc);
-}
+            var cc = encryptByDESModeCBCUtf8to64(source, "rrettre", "234234234");
+            $("#target").val(cc);
+        }
 
-function test1(){
-var source = $("#sourceS").val();
-var dd = decryptByDESModeCBC(source,"rrettre","234234234");
-$("#jiemi").val(dd);
-}
+        function test1() {
+            var source = $("#sourceS").val();
+            var dd = decryptByDESModeCBC(source, "rrettre", "234234234");
+            $("#jiemi").val(dd);
+        }
 
-function test2(){
-var source = $("#sourceS").val();
-var dd = decryptByDESModeCBCHex(source,"rrettre","234234234");
-$("#jiemi").val(dd);
-}
-</script>
+        function test2() {
+            var source = $("#sourceS").val();
+            var dd = decryptByDESModeCBCHex(source, "rrettre", "234234234");
+            $("#jiemi").val(dd);
+        }
+    </script>
 </head>
 <body>
- <div>
-加密前：<textarea id="source" value=""  style="width:500px;height:90px;" /></textarea>
-<hr>
-加密后：<textarea id="target" value="" style="width:500px;height:90px;" ></textarea>
+<div>
+    加密前：<textarea id="source" style="width:500px;height:90px;" value=""/></textarea>
+    <hr>
+    加密后：<textarea id="target" style="width:500px;height:90px;" value=""></textarea>
 
-<hr>
-<input type="button" onclick="test();" name="" value="加密" />
-<input type="button" onclick="test0();" name="" value="加密" />
+    <hr>
+    <input name="" onclick="test();" type="button" value="加密"/>
+    <input name="" onclick="test0();" type="button" value="加密"/>
 
-<hr>
-密文：<textarea id="sourceS" value="" width="400px"  style="width:500px;height:90px;" ></textarea>
-<hr>
-解密后：<textarea id="jiemi" value="" style="width:500px;height:90px;" ></textarea>
-<hr>
-<input type="button" onclick="test1();" name="" value="解密"/>
+    <hr>
+    密文：<textarea id="sourceS" style="width:500px;height:90px;" value="" width="400px"></textarea>
+    <hr>
+    解密后：<textarea id="jiemi" style="width:500px;height:90px;" value=""></textarea>
+    <hr>
+    <input name="" onclick="test1();" type="button" value="解密"/>
 
-<input type="button" onclick="test2();" name="" value="解密Hex"/>
- </div>
+    <input name="" onclick="test2();" type="button" value="解密Hex"/>
+</div>
 </body>
 </html>

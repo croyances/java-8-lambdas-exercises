@@ -22,7 +22,8 @@ var CryptoJS = CryptoJS || (function (Math, undefined) {
      * Base object for prototypal inheritance.
      */
     var Base = C_lib.Base = (function () {
-        function F() {}
+        function F() {
+        }
 
         return {
             /**
@@ -662,7 +663,7 @@ var CryptoJS = CryptoJS || (function (Math, undefined) {
             return hash;
         },
 
-        blockSize: 512/32,
+        blockSize: 512 / 32,
 
         /**
          * Creates a shortcut function to a hasher's object interface.

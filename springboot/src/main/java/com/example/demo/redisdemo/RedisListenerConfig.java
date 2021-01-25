@@ -1,12 +1,9 @@
 package com.example.demo.redisdemo;
 
 
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 
@@ -15,12 +12,12 @@ public class RedisListenerConfig {
 
     @Bean
     RedisMessageListenerContainer container(RedisConnectionFactory connectionFactory,
-                                            RedisListen messageListener,InitRedisListen messageListener2) {
+                                            RedisListen messageListener, InitRedisListen messageListener2) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
 
         //可以添加多个 messageListener
-    //    container.addMessageListener(messageListener, new PatternTopic("test"));
+        //    container.addMessageListener(messageListener, new PatternTopic("test"));
         container.addMessageListener(messageListener2, new PatternTopic("loadCache"));
 
         return container;

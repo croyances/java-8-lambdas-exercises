@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
-public class MyInterceptor  implements HandlerInterceptor {
+public class MyInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -15,7 +15,7 @@ public class MyInterceptor  implements HandlerInterceptor {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Method method = handlerMethod.getMethod();
         UnHandler annotation = method.getAnnotation(UnHandler.class);
-        if (annotation!=null){
+        if (annotation != null) {
             return true;
         }
 

@@ -11,13 +11,15 @@ public class ThreadLocalTest05 {
         SimpleDateFormat simpleDateFormat = ThreadSafeFormatter.dateFormatThreadLocal.get();
         return simpleDateFormat.format(date);
     }
+
     private static final ExecutorService executorService = Executors.newFixedThreadPool(100);
 
     public static void main(String[] args) {
         for (int i = 0; i < 3000; i++) {
             int j = i;
-            executorService.execute(() -> { String date = dateToStr(j * 1000); // 从结果中可以看出是线程安全的，时间没有重复的。
-             System.out.println(date);
+            executorService.execute(() -> {
+                String date = dateToStr(j * 1000); // 从结果中可以看出是线程安全的，时间没有重复的。
+                System.out.println(date);
             });
         }
         executorService.shutdown();

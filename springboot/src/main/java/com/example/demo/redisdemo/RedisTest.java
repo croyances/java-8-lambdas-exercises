@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class RedisTest {
 
     @Autowired
-    private  StringRedisTemplate redisTemplate ;
+    private StringRedisTemplate redisTemplate;
 
 //    @Scheduled(fixedRate = 1000)
 //    public void sendMessage() {

@@ -25,8 +25,8 @@
         </dependency>
 
         <dependency>
-        <groupId>org.springframework.boot </groupId>
-        <artifactId>spring-boot-starter-activemq</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
 
 
@@ -41,13 +41,13 @@
         </dependency>
 
         <dependency>
-        <groupId>org.springframework.boot </groupId>
-        <artifactId>spring-boot-starter-aop </artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.shiro </groupId>
-            <artifactId>shiro-spring </artifactId>
-            <version>1.4.0 </version>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -82,7 +82,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>

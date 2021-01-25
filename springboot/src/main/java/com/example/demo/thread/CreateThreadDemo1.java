@@ -1,9 +1,5 @@
 package com.example.demo.thread;
 
-import com.sun.org.apache.bcel.internal.generic.SASTORE;
-
-import java.util.concurrent.Callable;
-
 public class CreateThreadDemo1 extends Thread {
 
     public CreateThreadDemo1() {
@@ -45,8 +41,6 @@ public class CreateThreadDemo1 extends Thread {
     private static void printThreadInfo() {
         System.out.println("当前运行的线程名为： " + Thread.currentThread().getName());
     }
-
-
 
 
 }

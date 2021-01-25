@@ -7,7 +7,7 @@ package com.example.demo.thread.dielock;
  */
 public class Singleton {
 
-    private static  Singleton singleton = new Singleton();
+    private static Singleton singleton = new Singleton();
 
     private Singleton() {
     }

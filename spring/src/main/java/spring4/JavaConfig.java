@@ -13,11 +13,12 @@ import org.springframework.context.annotation.Bean;
 public class JavaConfig {
 
     @Bean
-    public Say say(){
+    public Say say() {
         return new SayImpl();
     }
+
     @Bean
-    public User user(){
+    public User user() {
         return new User();
     }
 

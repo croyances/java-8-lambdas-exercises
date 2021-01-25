@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @date 2020/9/8 13:59
  */
 @Service
-public class SayImpl implements Say{
+public class SayImpl implements Say {
 
 
     private User user;
@@ -20,12 +20,11 @@ public class SayImpl implements Say{
 //    }
 
     @Autowired
-    public void setUserA(User user){
+    public void setUserA(User user) {
         System.out.println(333);
         this.user = user;
         System.out.println(999);
     }
-
 
 
     @Override

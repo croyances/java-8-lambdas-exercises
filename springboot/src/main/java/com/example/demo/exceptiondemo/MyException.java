@@ -1,12 +1,10 @@
 package com.example.demo.exceptiondemo;
 
-import java.util.Optional;
-
 public class MyException extends RuntimeException {
 
-    private String msg ;
+    private String msg;
 
-    private String code ;
+    private String code;
 
     public MyException(ExceptionEnum exceptionEnum) {
         this.msg = exceptionEnum.getMsg();

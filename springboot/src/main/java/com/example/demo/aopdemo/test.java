@@ -13,8 +13,8 @@ public class test {
     public static void main(String[] args) {
 
 
-        ApplicationContext a =  new ClassPathXmlApplicationContext("app.xml");
-        User user =(User) a.getBean("User");
+        ApplicationContext a = new ClassPathXmlApplicationContext("app.xml");
+        User user = (User) a.getBean("User");
         user.save();
     }
 }

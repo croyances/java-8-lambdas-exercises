@@ -13,56 +13,11 @@ import java.util.stream.IntStream;
  */
 public class MyTest {
 
-   static class Transaction{
-        private final Trader trader;
-        private final int year;
-        private final int value;
-        public Transaction(Trader trader, int year, int value){
-            this.trader = trader;
-            this.year = year;
-            this.value = value;
-        }
-        public Trader getTrader(){
-            return this.trader;
-        }
-        public int getYear(){
-            return this.year;
-        }
-        public int getValue(){
-            return this.value;
-        }
-        public String toString(){
-            return "{" + this.trader + ", " +
-                    "year: "+this.year+", " +
-                    "value:" + this.value +"}";
-        }
-    }
-
-
-    static class Trader{
-        private final String name;
-        private final String city;
-        public Trader(String n, String c){
-            this.name = n;
-            this.city = c;
-        }
-        public String getName(){
-            return this.name;
-        }
-        public String getCity(){
-            return this.city;
-        }
-
-        public String toString(){
-            return "Trader:"+this.name + " in " + this.city;
-        }
-    }
-
     public static void main(String[] args) {
         Trader raoul = new Trader("Raoul", "Cambridge");
-        Trader mario = new Trader("Mario","Milan");
-        Trader alan = new Trader("Alan","Cambridge");
-        Trader brian = new Trader("Brian","Cambridge");
+        Trader mario = new Trader("Mario", "Milan");
+        Trader alan = new Trader("Alan", "Cambridge");
+        Trader brian = new Trader("Brian", "Cambridge");
         List<Transaction> transactions = Arrays.asList(
                 new Transaction(brian, 2011, 300),
                 new Transaction(raoul, 2012, 1000),
@@ -98,12 +53,12 @@ public class MyTest {
                 .map(Transaction::getTrader)
                 .anyMatch(s -> s.getCity().equals("Milan"));
 
-         transactions.stream()
+        transactions.stream()
                 .filter(s -> s.getTrader().getCity().equals("Cambridge"))
                 .mapToInt(s -> s.getValue())
 
 
-                ;
+        ;
 
         Integer reduce = transactions.stream()
                 .map(s -> s.getValue())
@@ -121,26 +76,25 @@ public class MyTest {
         IntStream.rangeClosed(1, 100)
                 .boxed()
                 .flatMap(a -> IntStream.rangeClosed(a, 100)
-                        .filter(b ->  Math.sqrt(a * a + b * b) % 1 == 0)
+                        .filter(b -> Math.sqrt(a * a + b * b) % 1 == 0)
                         .mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)})
                 ).limit(5)
-                .forEach(s-> System.out.println(s[0]+","+s[1]+","+s[2]));
-
+                .forEach(s -> System.out.println(s[0] + "," + s[1] + "," + s[2]));
 
 
         IntStream.rangeClosed(0, 9)
                 .boxed()
-                .flatMap(a-> IntStream.rangeClosed(0, 9).boxed().flatMap(b->IntStream.rangeClosed(0, 9).boxed()
-                        .filter(c->a*a*a + b*b*b +c*c*c==a+b*10+c*100&&(a+b*10+c*100>100||a+b*10+c*100>1000))
-                        .map(c->new int[]{a,b,c})
-                )).forEach(s-> System.out.println(String.valueOf(s[0]+s[1]*10+s[2]*100)));
+                .flatMap(a -> IntStream.rangeClosed(0, 9).boxed().flatMap(b -> IntStream.rangeClosed(0, 9).boxed()
+                        .filter(c -> a * a * a + b * b * b + c * c * c == a + b * 10 + c * 100 && (a + b * 10 + c * 100 > 100 || a + b * 10 + c * 100 > 1000))
+                        .map(c -> new int[]{a, b, c})
+                )).forEach(s -> System.out.println(String.valueOf(s[0] + s[1] * 10 + s[2] * 100)));
         //  .forEach(ints -> System.out.println(ints[0]+ints[1]+ints[2]));
 
 
         int[] numbers = {2, 3, 5, 7, 11, 13};
         int sum = Arrays.stream(numbers).sum();
 
-        String[] strings = {"2", "3", "5", "7","11", "13"};
+        String[] strings = {"2", "3", "5", "7", "11", "13"};
 
 
         IntStream.generate(() ->
@@ -151,7 +105,57 @@ public class MyTest {
         }).forEach(System.out::println);
 
 
+    }
 
+    static class Transaction {
+        private final Trader trader;
+        private final int year;
+        private final int value;
 
+        public Transaction(Trader trader, int year, int value) {
+            this.trader = trader;
+            this.year = year;
+            this.value = value;
+        }
+
+        public Trader getTrader() {
+            return this.trader;
+        }
+
+        public int getYear() {
+            return this.year;
+        }
+
+        public int getValue() {
+            return this.value;
+        }
+
+        public String toString() {
+            return "{" + this.trader + ", " +
+                    "year: " + this.year + ", " +
+                    "value:" + this.value + "}";
+        }
+    }
+
+    static class Trader {
+        private final String name;
+        private final String city;
+
+        public Trader(String n, String c) {
+            this.name = n;
+            this.city = c;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public String getCity() {
+            return this.city;
+        }
+
+        public String toString() {
+            return "Trader:" + this.name + " in " + this.city;
+        }
     }
 }

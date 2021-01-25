@@ -3,6 +3,6 @@
 <body>
 <h2>Hello World!</h2>
 
-<a href="hello"> 入门程序  </a>
+<a href="hello"> 入门程序 </a>
 </body>
 </html>
