@@ -1,8 +1,6 @@
 package com.example.demo.aopdemo;
 
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * @Author: croyances
@@ -10,7 +8,7 @@ import org.aspectj.lang.annotation.Pointcut;
  * @version: 1.0
  */
 
-@Aspect
+//@Aspect
 public class MyUserAspect {
 
 
@@ -19,8 +17,8 @@ public class MyUserAspect {
         System.out.println("权限校验");
     }
 
-    @Pointcut("execution(* com.example.demo.aopdemo.UserImpl.save(..))")
-    private void pointCut() {
-
-    }
+//    @Pointcut("execution(* com.example.demo.aopdemo.UserImpl.save(..))")
+//    private void pointCut() {
+//
+//    }
 }

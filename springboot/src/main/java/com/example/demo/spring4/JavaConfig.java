@@ -2,7 +2,6 @@ package com.example.demo.spring4;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author caiwenhai
@@ -10,14 +9,13 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020/9/8 13:59
  */
 
-//@ComponentScan("spring4")
+//@ComponentScan("com.example.demo.spring4")
 //@Component
-@Configuration
+//@Configuration
 public class JavaConfig {
 
 
-    @Bean
-
+    //    @Bean
 //    public Say say(){
 //        return new SayImpl(user());
 //    }

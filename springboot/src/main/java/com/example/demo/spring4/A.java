@@ -4,7 +4,6 @@ import com.example.demo.aopdemo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 /**
  * @author caiwenhai
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/9/9 11:05
  */
 @Order(81)
-@Component
+//@Component
 public class A implements CommandLineRunner {
 
     @Autowired

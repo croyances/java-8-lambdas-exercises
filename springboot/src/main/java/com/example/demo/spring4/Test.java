@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -14,7 +13,7 @@ import javax.annotation.Resource;
  * @version 1.0
  * @date 2020/9/8 14:00
  */
-@Component
+//@Component
 public class Test implements ApplicationRunner {
 
 

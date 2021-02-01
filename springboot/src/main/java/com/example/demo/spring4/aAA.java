@@ -1,14 +1,13 @@
 package com.example.demo.spring4;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * @author caiwenhai
  * @version 1.0
  * @date 2020/9/10 13:59
  */
-@Component
+//@Component
 public class aAA {
 
     @Autowired
