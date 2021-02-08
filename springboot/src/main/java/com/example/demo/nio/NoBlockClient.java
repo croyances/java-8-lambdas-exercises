@@ -18,11 +18,11 @@ import java.util.Iterator;
  */
 public class NoBlockClient {
 
-    public static void bb() throws IOException {
-
+    public static void main(String[] args) throws IOException {
         // 1. 获取通道
-        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 6666));
-
+        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 8039));
+        System.out.println(socketChannel.getLocalAddress());
+        System.out.println(socketChannel.getRemoteAddress());
         // 1.1切换成非阻塞模式
         socketChannel.configureBlocking(false);
 
@@ -83,12 +83,5 @@ public class NoBlockClient {
                 iterator.remove();
             }
         }
-    }
-
-
-    public static void main(String[] args) throws IOException {
-        NoBlockServer.aa();
-        NoBlockClient.bb();
-        System.out.println(1);
     }
 }

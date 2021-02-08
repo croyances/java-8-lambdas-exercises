@@ -14,10 +14,7 @@ import java.util.Iterator;
  * @date 2021/1/25 14:42
  */
 public class NoBlockServer {
-
-
-    public static void aa() throws IOException {
-
+    public static void main(String[] args) throws IOException {
         // 1.获取通道
         ServerSocketChannel server = ServerSocketChannel.open();
 
@@ -25,7 +22,7 @@ public class NoBlockServer {
         server.configureBlocking(false);
 
         // 3. 绑定连接
-        server.bind(new InetSocketAddress(8013));
+        server.bind(new InetSocketAddress(8039));
 
         // 4. 获取选择器
         Selector selector = Selector.open();
@@ -80,6 +77,6 @@ public class NoBlockServer {
                 iterator.remove();
             }
         }
-
     }
+
 }
